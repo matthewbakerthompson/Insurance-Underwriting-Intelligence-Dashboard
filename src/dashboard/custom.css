@@ -1,0 +1,47 @@
+/* Custom CSS to override Streamlit's default styling */
+
+/* Remove all container boxes and backgrounds */
+.stExpander, .streamlit-expanderHeader, .streamlit-expanderContent,
+div[data-testid="stExpander"], div.streamlit-expanderHeader, div.streamlit-expanderContent,
+.css-1fcdlhc, .css-1aehpvj, .css-16idsys, .css-10oheav, .css-ue6h4q, .css-1544g2n,
+div[class*="css-"], div[class*="st-"] {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Target the specific highlighted boxes in the dashboard */
+.element-container:has(h3), .element-container:has(.section-header) {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Make section headers clean and visible */
+h3.section-header, .section-header {
+    color: #0F172A !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid #1E40AF !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+}
+
+/* Fix chart containers */
+.stPlotlyChart {
+    background-color: white !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 0.5rem !important;
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Ensure legend text is visible */
+.gtitle, .legendtext, .g-legend-title, .legend text {
+    fill: #0F172A !important;
+    color: #0F172A !important;
+    font-weight: 600 !important;
+}

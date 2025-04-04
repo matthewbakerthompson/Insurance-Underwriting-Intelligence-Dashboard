@@ -1,0 +1,264 @@
+{
+  "businesses": [
+    {
+      "business_id": "B0001",
+      "industry": "Retail",
+      "revenue": 1250000,
+      "employees": 25,
+      "years_in_business": 8,
+      "previous_claims": 1,
+      "risk_score": 42.5,
+      "location": {
+        "address": "123 Main St, Commerce City, USA",
+        "property_id": "P0002"
+      }
+    },
+    {
+      "business_id": "B0002",
+      "industry": "Manufacturing",
+      "revenue": 5800000,
+      "employees": 120,
+      "years_in_business": 15,
+      "previous_claims": 3,
+      "risk_score": 68.2,
+      "location": {
+        "address": "456 Industrial Ave, Commerce City, USA",
+        "property_id": "P0003"
+      }
+    },
+    {
+      "business_id": "B0003",
+      "industry": "Technology",
+      "revenue": 3200000,
+      "employees": 45,
+      "years_in_business": 6,
+      "previous_claims": 0,
+      "risk_score": 35.8,
+      "location": {
+        "address": "789 Tech Blvd, Commerce City, USA",
+        "property_id": "P0005"
+      }
+    },
+    {
+      "business_id": "B0004",
+      "industry": "Healthcare",
+      "revenue": 4100000,
+      "employees": 85,
+      "years_in_business": 12,
+      "previous_claims": 2,
+      "risk_score": 51.3,
+      "location": {
+        "address": "321 Medical Center Dr, Commerce City, USA",
+        "property_id": "P0007"
+      }
+    },
+    {
+      "business_id": "B0005",
+      "industry": "Finance",
+      "revenue": 7500000,
+      "employees": 65,
+      "years_in_business": 22,
+      "previous_claims": 1,
+      "risk_score": 45.7,
+      "location": {
+        "address": "555 Banking Way, Commerce City, USA",
+        "property_id": "P0008"
+      }
+    },
+    {
+      "business_id": "B0006",
+      "industry": "Retail",
+      "revenue": 2800000,
+      "employees": 40,
+      "years_in_business": 10,
+      "previous_claims": 2,
+      "risk_score": 48.9,
+      "location": {
+        "address": "777 Shopping Center Rd, Commerce City, USA",
+        "property_id": "P0011"
+      }
+    },
+    {
+      "business_id": "B0007",
+      "industry": "Manufacturing",
+      "revenue": 9200000,
+      "employees": 210,
+      "years_in_business": 25,
+      "previous_claims": 5,
+      "risk_score": 72.5,
+      "location": {
+        "address": "888 Factory Lane, Commerce City, USA",
+        "property_id": "P0012"
+      }
+    },
+    {
+      "business_id": "B0008",
+      "industry": "Technology",
+      "revenue": 5500000,
+      "employees": 80,
+      "years_in_business": 9,
+      "previous_claims": 1,
+      "risk_score": 41.2,
+      "location": {
+        "address": "999 Innovation Park, Commerce City, USA",
+        "property_id": "P0014"
+      }
+    },
+    {
+      "business_id": "B0009",
+      "industry": "Healthcare",
+      "revenue": 6800000,
+      "employees": 130,
+      "years_in_business": 18,
+      "previous_claims": 3,
+      "risk_score": 58.6,
+      "location": {
+        "address": "444 Hospital Blvd, Commerce City, USA",
+        "property_id": "P0016"
+      }
+    },
+    {
+      "business_id": "B0010",
+      "industry": "Finance",
+      "revenue": 12000000,
+      "employees": 95,
+      "years_in_business": 30,
+      "previous_claims": 2,
+      "risk_score": 52.8,
+      "location": {
+        "address": "222 Financial Plaza, Commerce City, USA",
+        "property_id": "P0018"
+      }
+    },
+    {
+      "business_id": "B0011",
+      "industry": "Retail",
+      "revenue": 1800000,
+      "employees": 30,
+      "years_in_business": 7,
+      "previous_claims": 1,
+      "risk_score": 44.3,
+      "location": {
+        "address": "111 Retail Row, Commerce City, USA",
+        "property_id": "P0022"
+      }
+    },
+    {
+      "business_id": "B0012",
+      "industry": "Manufacturing",
+      "revenue": 7800000,
+      "employees": 175,
+      "years_in_business": 20,
+      "previous_claims": 4,
+      "risk_score": 65.9,
+      "location": {
+        "address": "333 Production Ave, Commerce City, USA",
+        "property_id": "P0027"
+      }
+    },
+    {
+      "business_id": "B0013",
+      "industry": "Technology",
+      "revenue": 4500000,
+      "employees": 60,
+      "years_in_business": 8,
+      "previous_claims": 0,
+      "risk_score": 38.2,
+      "location": {
+        "address": "666 Software St, Commerce City, USA",
+        "property_id": "P0029"
+      }
+    },
+    {
+      "business_id": "B0014",
+      "industry": "Healthcare",
+      "revenue": 5200000,
+      "employees": 110,
+      "years_in_business": 14,
+      "previous_claims": 2,
+      "risk_score": 54.7,
+      "location": {
+        "address": "888 Clinic Court, Commerce City, USA",
+        "property_id": "P0031"
+      }
+    },
+    {
+      "business_id": "B0015",
+      "industry": "Finance",
+      "revenue": 9500000,
+      "employees": 75,
+      "years_in_business": 26,
+      "previous_claims": 1,
+      "risk_score": 49.5,
+      "location": {
+        "address": "777 Investment Ave, Commerce City, USA",
+        "property_id": "P0032"
+      }
+    },
+    {
+      "business_id": "B0016",
+      "industry": "Retail",
+      "revenue": 3500000,
+      "employees": 50,
+      "years_in_business": 12,
+      "previous_claims": 2,
+      "risk_score": 47.8,
+      "location": {
+        "address": "555 Market St, Commerce City, USA",
+        "property_id": "P0035"
+      }
+    },
+    {
+      "business_id": "B0017",
+      "industry": "Manufacturing",
+      "revenue": 11000000,
+      "employees": 250,
+      "years_in_business": 28,
+      "previous_claims": 6,
+      "risk_score": 75.3,
+      "location": {
+        "address": "444 Assembly Rd, Commerce City, USA",
+        "property_id": "P0036"
+      }
+    },
+    {
+      "business_id": "B0018",
+      "industry": "Technology",
+      "revenue": 6200000,
+      "employees": 90,
+      "years_in_business": 10,
+      "previous_claims": 1,
+      "risk_score": 43.6,
+      "location": {
+        "address": "333 Digital Dr, Commerce City, USA",
+        "property_id": "P0038"
+      }
+    },
+    {
+      "business_id": "B0019",
+      "industry": "Healthcare",
+      "revenue": 7500000,
+      "employees": 145,
+      "years_in_business": 19,
+      "previous_claims": 3,
+      "risk_score": 59.2,
+      "location": {
+        "address": "222 Wellness Way, Commerce City, USA",
+        "property_id": "P0040"
+      }
+    },
+    {
+      "business_id": "B0020",
+      "industry": "Finance",
+      "revenue": 15000000,
+      "employees": 110,
+      "years_in_business": 35,
+      "previous_claims": 2,
+      "risk_score": 55.4,
+      "location": {
+        "address": "111 Capital Court, Commerce City, USA",
+        "property_id": "P0042"
+      }
+    }
+  ]
+}
