@@ -1,20 +1,12 @@
 [build-system]
-requires = ["setuptools>=65.5.0", "wheel>=0.38.0"]
+requires = ["setuptools==68.0.0", "wheel==0.40.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "insurance-underwriting-dashboard"
 version = "0.1.0"
 description = "Insurance Underwriting Intelligence Dashboard"
-readme = "README.md"
-requires-python = ">=3.8,<3.12"
-license = {text = "MIT"}
-authors = [
-    {name = "Matthew Thompson"}
-]
+requires-python = ">=3.9,<3.10"
 
 [tool.setuptools]
 packages = ["src"]
-
-[tool.setuptools.package-data]
-"*" = ["*.csv", "*.json"]
