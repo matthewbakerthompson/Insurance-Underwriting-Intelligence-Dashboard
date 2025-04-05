@@ -34,50 +34,32 @@ def render_correlation_heatmap(property_data):
         
         corr_renamed = corr.rename(index=readable_names, columns=readable_names)
         
-        # Create heatmap
+        # Create heatmap with simplified configuration
         fig = px.imshow(
             corr_renamed,
             text_auto='.2f',
             color_continuous_scale='RdBu_r',
             zmin=-1, zmax=1,
-            aspect="auto",
-            title="Risk Factor Correlation Matrix"
+            aspect="auto"
         )
         
-        # Update layout with consistent theming
-        custom_layout = {
-            'height': 500,
-            'coloraxis_colorbar': dict(
-                title="Correlation",
-                thicknessmode="pixels", thickness=20,
-                lenmode="pixels", len=400,
-                yanchor="top", y=1,
-                ticks="outside",
-                tickfont=dict(color='#0F172A'),
-                titlefont=dict(color='#0F172A')
-            ),
-            'title': {"text": "Risk Factor Correlation Matrix"},
-            'font': dict(color='#0F172A'),
-            'plot_bgcolor': 'white'
-        }
-        # Safely merge layouts and update
-        merged_layout = merge_layout(custom_layout)
-        fig.update_layout(height=merged_layout.get('height', 500))
+        # Basic layout updates that are known to work
+        fig.update_layout(
+            height=500,
+            title="Risk Factor Correlation Matrix",
+            font=dict(color='#0F172A'),
+            plot_bgcolor='white'
+        )
         
-        # Handle coloraxis_colorbar separately
-        if 'coloraxis_colorbar' in merged_layout:
-            fig.update_layout(coloraxis_colorbar=merged_layout['coloraxis_colorbar'])
-            
-        # Handle other common properties
-        if 'title' in merged_layout:
-            fig.update_layout(title=merged_layout['title'])
-        if 'font' in merged_layout:
-            fig.update_layout(font=merged_layout['font'])
-        if 'plot_bgcolor' in merged_layout:
-            fig.update_layout(plot_bgcolor=merged_layout['plot_bgcolor'])
-        
-        # Make sure text is visible
-        fig.update_traces(textfont=dict(color='#0F172A', size=12))
+        # Simplify colorbar configuration to avoid nested structure issues
+        fig.update_coloraxes(colorbar=dict(
+            thickness=20,
+            len=400,
+            y=1,
+            yanchor="top",
+            ticks="outside",
+            tickfont=dict(color='#0F172A')
+        ))
         
         # Ensure text is visible and properly formatted
         fig.update_traces(
