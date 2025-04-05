@@ -13,8 +13,9 @@ seaborn>=0.13.0
 plotly>=5.18.0
 streamlit>=1.29.0
 
-# Model explanation (simplified)
-shap>=0.43.0
+# Model explanation - Python 3.12 compatible version
+# Using a newer version of shap that doesn't depend on numba/llvmlite
+shap==0.43.0
 
 # Additional utilities
 openpyxl>=3.1.2

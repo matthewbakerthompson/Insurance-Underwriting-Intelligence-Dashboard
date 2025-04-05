@@ -34,37 +34,54 @@ def render_correlation_heatmap(property_data):
         
         corr_renamed = corr.rename(index=readable_names, columns=readable_names)
         
-        # Create heatmap with simplified configuration
-        fig = px.imshow(
-            corr_renamed,
-            text_auto='.2f',
-            color_continuous_scale='RdBu_r',
+        # Create an improved heatmap with better formatting
+        fig = go.Figure()
+        
+        # Add the heatmap trace
+        fig.add_trace(go.Heatmap(
+            z=corr_renamed.values,
+            x=corr_renamed.columns,
+            y=corr_renamed.index,
             zmin=-1, zmax=1,
-            aspect="auto"
-        )
-        
-        # Basic layout updates that are known to work
-        fig.update_layout(
-            height=500,
-            title="Risk Factor Correlation Matrix",
-            font=dict(color='#0F172A'),
-            plot_bgcolor='white'
-        )
-        
-        # Simplify colorbar configuration to avoid nested structure issues
-        fig.update_coloraxes(colorbar=dict(
-            thickness=20,
-            len=400,
-            y=1,
-            yanchor="top",
-            ticks="outside",
-            tickfont=dict(color='#0F172A')
+            colorscale='RdBu_r',
+            text=corr_renamed.round(2).values,
+            texttemplate='%{text:.2f}',
+            colorbar=dict(
+                title='Correlation',
+                thickness=20,
+                len=400,
+                y=1,
+                yanchor="top",
+                ticks="outside",
+                tickfont=dict(color='#0F172A')
+            )
         ))
+        
+        # Improve layout with better formatting
+        fig.update_layout(
+            height=600,
+            width=800,
+            title={
+                'text': "Risk Factor Correlation Matrix",
+                'font': {'size': 20, 'color': '#0F172A'}
+            },
+            font=dict(color='#0F172A'),
+            plot_bgcolor='white',
+            xaxis=dict(
+                tickangle=-45,
+                tickfont=dict(size=14),
+                title=''
+            ),
+            yaxis=dict(
+                tickfont=dict(size=14),
+                title=''
+            ),
+            margin=dict(l=50, r=50, t=80, b=50)
+        )
         
         # Ensure text is visible and properly formatted
         fig.update_traces(
-            texttemplate='%{text:.2f}',
-            textfont=dict(size=12, color='black')
+            textfont=dict(size=14, color='black')
         )
         
         st.plotly_chart(fig, use_container_width=True)
