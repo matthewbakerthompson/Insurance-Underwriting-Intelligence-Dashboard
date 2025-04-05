@@ -5,6 +5,7 @@ numpy>=1.26.0
 pandas>=2.1.0
 scikit-learn>=1.3.0
 xgboost>=1.7.6
+statsmodels>=0.14.0
 
 # Visualization libraries
 matplotlib>=3.8.0

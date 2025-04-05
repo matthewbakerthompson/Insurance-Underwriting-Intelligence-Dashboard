@@ -111,7 +111,7 @@ def render_risk_relationships(property_data):
                 title='Property Value vs Location Risk',
                 color_discrete_map=get_property_type_colors(),
                 opacity=0.7,
-                trendline='ols',
+                # Removed trendline='ols' to avoid statsmodels dependency
                 labels={
                     'property_value': 'Property Value ($)',
                     'location_risk': 'Location Risk Score',
