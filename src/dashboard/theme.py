@@ -69,14 +69,25 @@ def apply_theme():
             color: #0F172A;
         }
         
-        /* Fix top bar styling */
+        /* Enhanced top bar styling */
         header[data-testid="stHeader"] {
-            background-color: #1E40AF !important;
+            background: linear-gradient(90deg, #1E3A8A 0%, #1E40AF 100%) !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+            height: 3.5rem !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
         }
         
-        /* Fix hamburger menu icon */
+        /* Improved hamburger menu icon */
         button[kind="header"] {
             color: white !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-radius: 4px !important;
+            margin: 0.5rem !important;
+            transition: background 0.2s ease !important;
+        }
+        
+        button[kind="header"]:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
         }
         
         /* Improve text contrast */
@@ -193,10 +204,47 @@ def apply_theme():
             color: #0F172A;
         }
         
-        /* Improve sidebar styling */
+        /* Enhanced sidebar styling */
         [data-testid="stSidebar"] {
-            background-color: #1E40AF;
-            border-right: 1px solid #1E3A8A;
+            background: linear-gradient(180deg, #1E3A8A 0%, #1E40AF 100%) !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        /* Sidebar content styling */
+        [data-testid="stSidebar"] .sidebar-content {
+            padding: 1rem !important;
+        }
+        
+        /* Sidebar title */
+        [data-testid="stSidebar"] .sidebar-title {
+            color: white !important;
+            font-size: 1.2rem !important;
+            font-weight: 600 !important;
+            margin-bottom: 1rem !important;
+            padding-bottom: 0.5rem !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+        
+        /* Radio buttons in sidebar */
+        [data-testid="stSidebar"] [role="radiogroup"] label {
+            color: white !important;
+            font-weight: 500 !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border-radius: 4px !important;
+            margin-bottom: 0.3rem !important;
+            padding: 0.5rem 1rem !important;
+            transition: background-color 0.2s ease !important;
+        }
+        
+        [data-testid="stSidebar"] [role="radiogroup"] label:hover {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+        }
+        
+        /* Selected radio button */
+        [data-testid="stSidebar"] [role="radiogroup"] label[data-baseweb="radio"][aria-checked="true"] {
+            background-color: rgba(255, 255, 255, 0.3) !important;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
         }
         
         /* Style the sidebar text */
