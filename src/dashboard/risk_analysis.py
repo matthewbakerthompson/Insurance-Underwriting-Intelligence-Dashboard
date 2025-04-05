@@ -60,7 +60,21 @@ def render_correlation_heatmap(property_data):
             'font': dict(color='#0F172A'),
             'plot_bgcolor': 'white'
         }
-        fig.update_layout(**merge_layout(custom_layout))
+        # Safely merge layouts and update
+        merged_layout = merge_layout(custom_layout)
+        fig.update_layout(height=merged_layout.get('height', 500))
+        
+        # Handle coloraxis_colorbar separately
+        if 'coloraxis_colorbar' in merged_layout:
+            fig.update_layout(coloraxis_colorbar=merged_layout['coloraxis_colorbar'])
+            
+        # Handle other common properties
+        if 'title' in merged_layout:
+            fig.update_layout(title=merged_layout['title'])
+        if 'font' in merged_layout:
+            fig.update_layout(font=merged_layout['font'])
+        if 'plot_bgcolor' in merged_layout:
+            fig.update_layout(plot_bgcolor=merged_layout['plot_bgcolor'])
         
         # Make sure text is visible
         fig.update_traces(textfont=dict(color='#0F172A', size=12))
