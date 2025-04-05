@@ -34,56 +34,49 @@ def render_correlation_heatmap(property_data):
         
         corr_renamed = corr.rename(index=readable_names, columns=readable_names)
         
-        # Create an improved heatmap with better formatting
+        # Create a simple but effective heatmap using a more reliable approach
+        heatmap_values = corr_renamed.values
+        
+        # Create figure with a simple heatmap
         fig = go.Figure()
         
-        # Add the heatmap trace
+        # Add heatmap trace with simplified configuration
         fig.add_trace(go.Heatmap(
-            z=corr_renamed.values,
-            x=corr_renamed.columns,
-            y=corr_renamed.index,
-            zmin=-1, zmax=1,
+            z=heatmap_values,
+            x=list(corr_renamed.columns),
+            y=list(corr_renamed.index),
             colorscale='RdBu_r',
-            text=corr_renamed.round(2).values,
-            texttemplate='%{text:.2f}',
-            colorbar=dict(
-                title='Correlation',
-                thickness=20,
-                len=400,
-                y=1,
-                yanchor="top",
-                ticks="outside",
-                tickfont=dict(color='#0F172A')
-            )
+            zmid=0,  # Center the color scale at 0
+            zmin=-1,
+            zmax=1,
+            showscale=True,
+            colorbar=dict(title='Correlation')
         ))
         
-        # Improve layout with better formatting
+        # Add text annotations for correlation values
+        for i in range(len(corr_renamed.index)):
+            for j in range(len(corr_renamed.columns)):
+                value = heatmap_values[i, j]
+                fig.add_annotation(
+                    x=j,
+                    y=i,
+                    text=f"{value:.2f}",
+                    showarrow=False,
+                    font=dict(color="black" if abs(value) < 0.7 else "white", size=14)
+                )
+        
+        # Update layout with reliable settings
         fig.update_layout(
-            height=600,
-            width=800,
-            title={
-                'text': "Risk Factor Correlation Matrix",
-                'font': {'size': 20, 'color': '#0F172A'}
-            },
-            font=dict(color='#0F172A'),
-            plot_bgcolor='white',
-            xaxis=dict(
-                tickangle=-45,
-                tickfont=dict(size=14),
-                title=''
-            ),
-            yaxis=dict(
-                tickfont=dict(size=14),
-                title=''
-            ),
-            margin=dict(l=50, r=50, t=80, b=50)
+            title="Risk Factor Correlation Matrix",
+            height=500,  # Fixed height
+            xaxis=dict(title=''),
+            yaxis=dict(title=''),
+            xaxis_showgrid=False,
+            yaxis_showgrid=False,
+            plot_bgcolor='white'
         )
         
-        # Ensure text is visible and properly formatted
-        fig.update_traces(
-            textfont=dict(size=14, color='black')
-        )
-        
+        # Display the chart with container width
         st.plotly_chart(fig, use_container_width=True)
     
     # Use the styled container for consistent appearance
