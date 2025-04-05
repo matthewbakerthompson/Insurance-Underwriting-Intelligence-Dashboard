@@ -98,7 +98,7 @@ Implementation of this data intelligence system provides significant business be
 
 ## Project Structure
 ```
-liberty-mutual-project/
+underwriting-dashboard-project/
 ├── data/
 │   ├── raw/                  # Raw third-party data
 │   ├── processed/            # Cleaned and processed data
