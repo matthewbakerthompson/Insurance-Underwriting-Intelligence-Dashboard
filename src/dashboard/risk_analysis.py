@@ -49,7 +49,7 @@ def render_correlation_heatmap(property_data):
         # Create figure with a simple heatmap
         fig = go.Figure()
         
-        # Add heatmap trace with improved configuration
+        # Add heatmap trace with simplified configuration
         fig.add_trace(go.Heatmap(
             z=heatmap_values,
             x=list(corr_renamed.columns),
@@ -61,10 +61,8 @@ def render_correlation_heatmap(property_data):
             showscale=True,
             colorbar=dict(
                 title='Correlation',
-                titleside='right',
                 ticks='outside',
-                tickfont=dict(size=12),
-                titlefont=dict(size=14)
+                tickfont=dict(size=12)
             )
         ))
         
@@ -73,10 +71,11 @@ def render_correlation_heatmap(property_data):
             for j in range(len(corr_renamed.columns)):
                 value = heatmap_values[i, j]
                 # Determine text color based on background intensity
-                # Use white for dark backgrounds, black for light backgrounds
-                text_color = "white" if abs(value) > 0.4 else "black"
+                # For better visibility: white text on dark backgrounds, black on light backgrounds
+                # Using a more conservative threshold to ensure better contrast
+                text_color = "white" if abs(value) > 0.3 else "black"
                 
-                # Add bold outline to text for better visibility
+                # Add annotation with improved visibility
                 fig.add_annotation(
                     x=j,
                     y=i,
@@ -85,10 +84,11 @@ def render_correlation_heatmap(property_data):
                     font=dict(
                         color=text_color,
                         size=14,
-                        family="Arial Black"
+                        family="Arial",
+                        weight="bold"
                     ),
                     bgcolor="rgba(255,255,255,0.0)",  # Transparent background
-                    borderpad=2
+                    borderpad=3
                 )
         
         # Update layout with improved settings for human readability
